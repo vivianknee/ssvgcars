@@ -1,6 +1,6 @@
-FROM docker.io/python:3.10
+FROM docker.io/python:3.9
 
-WORKDIR /
+WORKDIR /app
 
 # --- [Install python and pip] ---
 RUN apt-get update && apt-get upgrade -y && \
