@@ -7,10 +7,12 @@ from flask import render_template  # import render_template from "public" flask 
 from __init__ import app,db  # Definitions initialization
 from model.users import initUsers
 from model.cars import initCars
+from model.carspecs import initCarspecs
 
 # setup APIs
 from api.user import user_api # Blueprint import api definition
 from api.car import car_api # Blueprint import api definition
+from api.carspec import carspec_api # Blueprint import api definition
 
 # setup App pages
 from projects.projects import app_projects # Blueprint directory import projects definition
@@ -19,6 +21,7 @@ from projects.projects import app_projects # Blueprint directory import projects
 app.register_blueprint(user_api) # register api routes
 app.register_blueprint(app_projects) # register app pages
 app.register_blueprint(car_api) # register api routes
+app.register_blueprint(carspec_api) # register api routes
 
 @app.errorhandler(404)  # catch for URL not found
 def page_not_found(e):
@@ -38,6 +41,7 @@ def activate_job():  # activate these items
     db.init_app(app)
     initUsers()
     initCars()
+    initCarspecs()
 
 # this runs the application on the development server
 if __name__ == "__main__":
