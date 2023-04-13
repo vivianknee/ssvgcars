@@ -12,6 +12,7 @@
         "niko",
         "powersource",
         "pricerange",
+        "sqlalchemy",
         "werkzeug"
     ]
 }

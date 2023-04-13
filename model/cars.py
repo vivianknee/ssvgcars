@@ -5,7 +5,6 @@ from __init__ import app, db
 from sqlalchemy.exc import IntegrityError
 
 
-
 class Car(db.Model):
     __tablename__ = 'cars'  # table name is plural, class name is singular
 
