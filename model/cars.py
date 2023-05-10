@@ -1,3 +1,4 @@
+
 """ database dependencies to support sqliteDB examples """
 import json
 
@@ -6,9 +7,8 @@ from sqlalchemy.exc import IntegrityError
 
 
 class Car(db.Model):
-    __tablename__ = 'cars'  # table name is plural, class name is singular
+    __tablename__ = 'cars'  
 
-    # Define the User schema with "vars" from object
     id = db.Column(db.Integer, unique=True, primary_key=True)
     _image = db.Column(db.String(255), unique=False, nullable=False)
     _brand = db.Column(db.String(255), unique=False, nullable=False)
@@ -17,11 +17,9 @@ class Car(db.Model):
     _powersource = db.Column(db.String(255), unique=False, nullable=False)
     _pricerange = db.Column(db.Integer, unique=False, nullable=False)
    
-
-    # constructor of a User object, initializes the instance variables within object (self)
     def __init__(self, image, brand, color, type, powersource, pricerange):
         self._image = image
-        self._type = type    # variables with self prefix become part of the object
+        self._type = type    
         self._brand = brand
         self._color = color
         self._powersource = powersource
